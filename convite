@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convite para katiely</title>
+
+    <style>
+        body {
+            background-color: #a25f89;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .painel {
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100%;  /* Ajusta a largura máxima da imagem ao painel */
+            max-height: 80%;  /* Ajusta a altura máxima da imagem ao painel */
+            object-fit: contain;  /* Evita distorção da imagem */
+            margin-bottom: 20px;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .painel {
+                width: 90%;
+                height: 400px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            #sim, #nao {
+                height: 35px;
+                width: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <h1>Convite Especial</h1>
+
+        <img src="https://i.pinimg.com/736x/3f/5b/2c/3f5b2c3b513596f82531db0de902e496.jpg" alt="Imagem de fundo">
+
+        <h2>Aceita ir comigo ? </h2>
+
+        <a href=https://www.youtube.com/watch?v=vnBec1gpXSM><button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth - 20;  // Adicionando uma margem para não sair da tela
+            var maxY = alturaJanela - botaoNao.offsetHeight - 20;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+    </script>
+
+</body>
+</html>
